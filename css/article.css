@@ -1,0 +1,524 @@
+/* ========================================
+   BARRA DE PROGRESO DE LECTURA
+   ======================================== */
+
+.progress-bar-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #f0f0f0;
+    z-index: 9999;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background-color: var(--secondary-color);
+    width: 0%;
+    transition: width 0.1s ease;
+}
+
+/* ========================================
+   LAYOUT DE ARTÍCULO
+   ======================================== */
+
+.article-main {
+    background-color: var(--bg-light);
+    padding: 2rem 0;
+    flex: 1;
+}
+
+.article-container {
+    max-width: 1200px;
+}
+
+/* ========================================
+   BREADCRUMB
+   ======================================== */
+
+.breadcrumb-article {
+    background-color: transparent;
+    padding: 0;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1rem;
+}
+
+.breadcrumb-article .breadcrumb-item {
+    font-size: 0.9rem;
+}
+
+.breadcrumb-article a {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+.breadcrumb-article a:hover {
+    text-decoration: underline;
+}
+
+/* ========================================
+   ENCABEZADO DEL ARTÍCULO
+   ======================================== */
+
+.article-header {
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 2rem;
+}
+
+.article-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.article-metadata {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.metadata-item {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.metadata-label {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.metadata-value {
+    color: var(--text-dark);
+}
+
+.article-tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.article-tags .tag-badge {
+    background-color: #f5f5f5;
+    border: 1px solid var(--border-color);
+    color: var(--text-dark);
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+}
+
+.article-tags .tag-badge:hover {
+    background-color: var(--secondary-color);
+    color: white;
+    border-color: var(--secondary-color);
+}
+
+/* ========================================
+   TABLA DE CONTENIDOS (SIDEBAR)
+   ======================================== */
+
+.table-of-contents {
+    background-color: var(--bg-white);
+    border: 1px solid var(--border-color);
+    border-radius: 0;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    position: sticky;
+    top: 80px;
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
+}
+
+.toc-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 0.5rem;
+}
+
+.toc-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.toc-nav ul {
+    list-style: none;
+    padding-left: 1rem;
+    margin: 0;
+}
+
+.toc-nav li {
+    margin-bottom: 0.5rem;
+}
+
+.toc-nav a {
+    color: var(--text-dark);
+    text-decoration: none;
+    font-size: 0.95rem;
+    display: block;
+    padding: 0.3rem 0;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.toc-nav a:hover {
+    color: var(--secondary-color);
+    transform: translateX(4px);
+}
+
+.toc-nav a.active {
+    color: var(--secondary-color);
+    font-weight: 600;
+    border-left: 3px solid var(--secondary-color);
+    padding-left: 0.5rem;
+}
+
+/* Scrollbar personalizada para ToC */
+.table-of-contents::-webkit-scrollbar {
+    width: 6px;
+}
+
+.table-of-contents::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.table-of-contents::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 3px;
+}
+
+.table-of-contents::-webkit-scrollbar-thumb:hover {
+    background: var(--text-muted);
+}
+
+/* ========================================
+   CONTENIDO DEL ARTÍCULO
+   ======================================== */
+
+.article-content {
+    background-color: var(--bg-white);
+    padding: 2rem;
+    border-radius: 0;
+    line-height: 1.9;
+    color: var(--text-dark);
+}
+
+.article-content h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 0.5rem;
+    scroll-margin-top: 80px;
+}
+
+.article-content h2:first-child {
+    margin-top: 0;
+}
+
+.article-content h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-top: 1.8rem;
+    margin-bottom: 0.8rem;
+    scroll-margin-top: 80px;
+}
+
+.article-content p {
+    margin-bottom: 1.2rem;
+    text-align: justify;
+    font-size: 1rem;
+}
+
+.article-content a {
+    color: var(--secondary-color);
+    text-decoration: underline;
+    transition: color 0.2s ease;
+}
+
+.article-content a:hover {
+    color: var(--accent-warm);
+}
+
+.article-content ul,
+.article-content ol {
+    margin-bottom: 1.2rem;
+    margin-left: 2rem;
+}
+
+.article-content li {
+    margin-bottom: 0.5rem;
+    line-height: 1.8;
+}
+
+/* Imágenes */
+.article-content img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 2rem auto;
+    border-radius: 0;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.article-content figure {
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.article-content figcaption {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-top: 0.8rem;
+    font-style: italic;
+}
+
+/* Citas */
+.article-quote {
+    background-color: #f9f9f9;
+    border-left: 4px solid var(--secondary-color);
+    padding: 1.5rem;
+    margin: 2rem 0;
+    font-size: 1.05rem;
+    font-style: italic;
+    color: var(--text-dark);
+}
+
+.article-quote p {
+    margin-bottom: 1rem;
+}
+
+.quote-author {
+    font-weight: 600;
+    color: var(--primary-color);
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 0.95rem;
+}
+
+/* ========================================
+   SECCIÓN DE AUTOR
+   ======================================== */
+
+.author-section {
+    background-color: #f9f9f9;
+    border: 1px solid var(--border-color);
+    padding: 2rem;
+    margin: 3rem 0;
+    border-radius: 0;
+}
+
+.author-section h3 {
+    color: var(--primary-color);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 0.5rem;
+}
+
+.author-bio {
+    color: var(--text-dark);
+    line-height: 1.8;
+}
+
+/* ========================================
+   NAVEGACIÓN ENTRE ARTÍCULOS
+   ======================================== */
+
+.articles-navigation {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 2px solid var(--border-color);
+}
+
+.nav-article {
+    padding: 1.5rem;
+    background-color: #f9f9f9;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+.nav-article:hover {
+    background-color: var(--bg-white);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.nav-article .nav-link {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    color: var(--text-dark);
+    text-decoration: none;
+}
+
+.nav-article .nav-link:hover {
+    color: var(--secondary-color);
+}
+
+.nav-label {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-weight: 600;
+}
+
+.nav-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.next-article {
+    text-align: right;
+}
+
+.next-article .nav-link {
+    align-items: flex-end;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 991px) {
+    .article-title {
+        font-size: 2rem;
+    }
+
+    .article-content {
+        padding: 1.5rem;
+    }
+
+    .table-of-contents {
+        position: relative;
+        top: 0;
+        max-height: none;
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .article-title {
+        font-size: 1.6rem;
+    }
+
+    .article-metadata {
+        gap: 1rem;
+        font-size: 0.85rem;
+    }
+
+    .article-content {
+        padding: 1rem;
+        font-size: 0.95rem;
+    }
+
+    .article-content h2 {
+        font-size: 1.4rem;
+        margin-top: 2rem;
+    }
+
+    .article-content h3 {
+        font-size: 1.1rem;
+    }
+
+    .article-content img {
+        margin: 1.5rem auto;
+    }
+
+    .articles-navigation {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .next-article {
+        text-align: left;
+    }
+
+    .next-article .nav-link {
+        align-items: flex-start;
+    }
+
+    .article-quote {
+        padding: 1rem;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .breadcrumb-article {
+        font-size: 0.8rem;
+    }
+
+    .article-title {
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+    }
+
+    .article-metadata {
+        gap: 0.5rem;
+        flex-direction: column;
+    }
+
+    .article-tags {
+        gap: 0.3rem;
+    }
+
+    .article-tags .tag-badge {
+        font-size: 0.75rem;
+        padding: 0.3rem 0.6rem;
+    }
+
+    .article-content h2 {
+        font-size: 1.2rem;
+    }
+
+    .article-content h3 {
+        font-size: 1rem;
+    }
+
+    .author-section {
+        padding: 1rem;
+    }
+}
+
+/* ========================================
+   IMPRESIÓN
+   ======================================== */
+
+@media print {
+    .progress-bar-container,
+    .navbar,
+    footer,
+    .table-of-contents,
+    .articles-navigation {
+        display: none;
+    }
+
+    .article-content {
+        background-color: white;
+        padding: 0;
+    }
+
+    .article-content h2 {
+        page-break-after: avoid;
+    }
+
+    .article-quote {
+        page-break-inside: avoid;
+    }
+}

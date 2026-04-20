@@ -1,0 +1,23 @@
+# macOS
+.DS_Store
+*.swp
+*.swo
+
+# Windows
+Thumbs.db
+*.lnk
+
+# IDEs
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Node.js (si usas alguna herramienta de build)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Editor local files
+*~
+.tmp/
