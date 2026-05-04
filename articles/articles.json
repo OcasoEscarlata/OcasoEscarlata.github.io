@@ -7,5 +7,14 @@
     "excerpt": "Mientras el mundo se hunde en guerras imperialistas y la desaparición del Estado social de derecho se formaliza, una nueva alternativa tiene su lugar: un nuevo amanecer rojo.",
     "tags": ["Marxismo", "Socialismo", "Ensayo"],
     "url": "articulos/articulo-1.html"
+  },
+  {
+    "id": 2,
+    "title": "El Príncipe: un análisis materialista",
+    "author": "David OB",
+    "date": "2026-05-04",
+    "excerpt": "Un análisis de El Príncipe de Maquiavelo desde un punto de vista materialista.",
+    "tags": ["Materialismo", "Dialectica", "Marxismo", "Ensayo"],
+    "url": "articulos/el-principe.html"
   }
 ]
