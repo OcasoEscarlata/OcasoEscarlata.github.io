@@ -285,27 +285,58 @@
     font-style: italic;
 }
 
-/* Citas */
 .article-quote {
-    background-color: #f9f9f9;
-    border-left: 4px solid var(--secondary-color);
-    padding: 1.5rem;
-    margin: 2rem 0;
+    position: relative;
+    background-color: #ffffff; /* Fondo blanco limpio para contrastar */
+    border: none;
+    border-left: 5px solid var(--secondary-color);
+    border-radius: 4px;
+    padding: 1.8rem 2rem 1.8rem 2.5rem;
+    margin: 2.5rem 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04); /* Sombra suave */
     font-size: 1.05rem;
     font-style: italic;
     color: var(--text-dark);
+    overflow: hidden;
+}
+
+/* Efecto visual de comilla grande en el fondo */
+.article-quote::before {
+    content: "“";
+    position: absolute;
+    top: -5px;
+    left: 10px;
+    font-size: 5rem;
+    color: var(--secondary-color);
+    opacity: 0.15; /* Muy transparente para no distraer */
+    font-family: Georgia, serif;
+    z-index: 1;
 }
 
 .article-quote p {
-    margin-bottom: 1rem;
+    margin-bottom: 1.2rem;
+    position: relative;
+    z-index: 2; /* Asegura que el texto esté por encima de la comilla */
 }
 
 .quote-author {
     font-weight: 600;
     color: var(--primary-color);
-    display: block;
-    margin-top: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.8rem;
     font-size: 0.95rem;
+    font-style: normal; /* Para que el nombre del autor no sea itálica */
+    position: relative;
+    z-index: 2;
+}
+
+/* Línea decorativa para el autor */
+.quote-author::before {
+    content: "—";
+    color: var(--secondary-color);
+    font-weight: 700;
 }
 
 /* ========================================
