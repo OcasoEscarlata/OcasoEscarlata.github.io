@@ -16,5 +16,14 @@
     "excerpt": "Un análisis de El Príncipe de Maquiavelo desde un punto de vista materialista.",
     "tags": ["Materialismo", "Dialectica", "Marxismo", "Ensayo"],
     "url": "articulos/el-principe.html"
+  },
+  {
+    "id": 3,
+    "title": "Crítica a artículo anticomunista de El Mundo CR",
+    "author": "Rodrigo A.",
+    "date": "2026-05-04",
+    "excerpt": "Un análisis de El Príncipe de Maquiavelo desde un punto de vista materialista.",
+    "tags": ["Marxismo", "Crítica", "Historia", "Ensayo"],
+    "url": "articulos/anticomunismo-elmundocr.html"
   }
 ]
